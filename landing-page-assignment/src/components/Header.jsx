@@ -1,42 +1,46 @@
-import Logo from '../assets/logo-bookmark.svg'
+import Logo from '../assets/logo-bookmark.svg';
 
-function Header(){
+function Header() {
 
+    // Array of items with corrected string values
     const items = [
         {
-            name : features,
+            name: 'Features',  // Added quotes to make them strings
         },
         {
-            name : pricing,
+            name: 'Pricing',
         },
         {
-            name : contact,
+            name: 'Contact',
         },
-    ]
+    ];
 
-    function NavLinks({name}){
-        return(
+    // Function to return list items
+    function NavLinks({ name }) {
+        return (
             <>
                 <li>{name}</li>
             </>
-        )
+        );
     }
 
-
-    return(
+    return (
         <>
-         <header className="">
-            <div><img src={Logo} alt="" /></div>
-            <nav>
-                <ul>
-                {items.map((item, index) => (  
-                        <NavLinks key={index} name={item.name} />  
-                    ))}
-                </ul>
-                <span>login</span>
-            </nav>
-         </header>
+            <header className="">
+                <div>
+                    <img src={Logo} alt="Logo" />
+                </div>
+                <nav>
+                    <ul>
+                        {items.map((item, index) => (
+                            <NavLinks key={index} name={item.name} />
+                        ))}
+                    </ul>
+                    <span>Login</span>
+                </nav>
+            </header>
         </>
-    )
+    );
 }
+
 export default Header;
